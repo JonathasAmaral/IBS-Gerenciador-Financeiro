@@ -116,6 +116,7 @@ const PaymentSheet: React.FC<Props> = ({
                     }}
                 >
                     
+                    <div className="flex-grow">
                     {/* Header (Repeated on all pages, maybe simplified on subsequent) */}
                     <div className="text-center mb-4 border-b-2 border-gray-800 pb-4">
                         <h1 className="text-2xl font-bold text-gray-900 uppercase tracking-wide mb-2">IGREJA BÍBLICA SEMEAR</h1>
@@ -369,6 +370,7 @@ const PaymentSheet: React.FC<Props> = ({
                     {/* Expenses Table */}
                     <div className="mb-8">
                         <ExpenseTable expenses={page.expenses} onRemove={onRemoveExpense} />
+                    </div>
                     </div>
 
                     {/* Footer (Only on last page) */}
