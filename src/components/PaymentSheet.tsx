@@ -136,12 +136,8 @@ const PaymentSheet: React.FC<Props> = ({
                                 <CustomDateInput 
                                     value={data.date || ''}
                                     onChange={(e) => onUpdate({ date: e.target.value })}
-                                    className="border-b border-gray-400 focus:border-blue-500 outline-none bg-transparent px-1 font-mono w-32 text-center print:hidden cursor-pointer"
+                                    className="border-b border-gray-400 focus:border-blue-500 outline-none bg-transparent px-1 font-mono w-32 text-center cursor-pointer"
                                 />
-                                {/* Print-only date display */}
-                                <span className="hidden print:inline-block border-b border-black w-32 text-center font-mono">
-                                    {data.date ? data.date.split('-').reverse().join('/') : '___/___/___'}
-                                </span>
                             </div>
                         </div>
                         <div className="flex items-center gap-4">
@@ -149,7 +145,7 @@ const PaymentSheet: React.FC<Props> = ({
                                 className="flex items-center gap-1 cursor-pointer group"
                                 onClick={() => onUpdate({ dayOfWeek: 'SEGUNDA' })}
                             >
-                                <div className={`w-4 h-4 border border-gray-400 rounded-full flex items-center justify-center ${data.dayOfWeek === 'SEGUNDA' ? 'bg-blue-600 border-blue-600 print:bg-black print:border-black' : ''}`}>
+                                <div className={`w-4 h-4 border border-gray-400 rounded-full flex items-center justify-center ${data.dayOfWeek === 'SEGUNDA' ? 'bg-blue-600 border-blue-600' : ''}`}>
                                     {data.dayOfWeek === 'SEGUNDA' && <div className="w-2 h-2 bg-white rounded-full" />}
                                 </div>
                                 <span className="group-hover:text-blue-600">Segunda</span>
@@ -159,7 +155,7 @@ const PaymentSheet: React.FC<Props> = ({
                                 className="flex items-center gap-1 cursor-pointer group"
                                 onClick={() => onUpdate({ dayOfWeek: 'SEXTA' })}
                             >
-                                <div className={`w-4 h-4 border border-gray-400 rounded-full flex items-center justify-center ${data.dayOfWeek === 'SEXTA' ? 'bg-blue-600 border-blue-600 print:bg-black print:border-black' : ''}`}>
+                                <div className={`w-4 h-4 border border-gray-400 rounded-full flex items-center justify-center ${data.dayOfWeek === 'SEXTA' ? 'bg-blue-600 border-blue-600' : ''}`}>
                                     {data.dayOfWeek === 'SEXTA' && <div className="w-2 h-2 bg-white rounded-full" />}
                                 </div>
                                 <span className="group-hover:text-blue-600">Sexta</span>
@@ -167,7 +163,7 @@ const PaymentSheet: React.FC<Props> = ({
                             <span className="text-gray-400">|</span>
                             <div className="flex items-center gap-1 cursor-pointer group">
                                 <div 
-                                    className={`w-4 h-4 border border-gray-400 rounded-full flex items-center justify-center ${data.dayOfWeek === 'OUTRO' ? 'bg-blue-600 border-blue-600 print:bg-black print:border-black' : ''}`}
+                                    className={`w-4 h-4 border border-gray-400 rounded-full flex items-center justify-center ${data.dayOfWeek === 'OUTRO' ? 'bg-blue-600 border-blue-600' : ''}`}
                                     onClick={() => onUpdate({ dayOfWeek: 'OUTRO' })}
                                 >
                                     {data.dayOfWeek === 'OUTRO' && <div className="w-2 h-2 bg-white rounded-full" />}
@@ -178,11 +174,8 @@ const PaymentSheet: React.FC<Props> = ({
                                     onChange={(e) => onUpdate({ dayOfWeek: 'OUTRO', customDay: e.target.value })}
                                     onClick={() => onUpdate({ dayOfWeek: 'OUTRO' })}
                                     placeholder="Outro"
-                                    className="border-b border-gray-400 focus:border-blue-500 outline-none bg-transparent px-1 font-mono w-24 text-center print:hidden"
+                                    className="border-b border-gray-400 focus:border-blue-500 outline-none bg-transparent px-1 font-mono w-24 text-center"
                                 />
-                                <span className="hidden print:inline-block border-b border-black w-24 text-center font-mono">
-                                    {data.dayOfWeek === 'OUTRO' ? (data.customDay || '') : '______'}
-                                </span>
                             </div>
                         </div>
                     </div>
