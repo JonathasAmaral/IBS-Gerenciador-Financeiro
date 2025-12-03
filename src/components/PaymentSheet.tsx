@@ -34,9 +34,14 @@ const PaymentSheet: React.FC<Props> = ({
         value: 0
     });
     const [showExpenseInput, setShowExpenseInput] = useState(false);
+    const [descriptionError, setDescriptionError] = useState(false);
 
     const handleAddExpense = () => {
-        if (!newExpense.description || !newExpense.value) return;
+        if (!newExpense.description) {
+            setDescriptionError(true);
+            return;
+        }
+        if (!newExpense.value) return;
         onAddExpense({
             id: Date.now().toString(),
             date: newExpense.date,
@@ -44,6 +49,7 @@ const PaymentSheet: React.FC<Props> = ({
             value: newExpense.value
         });
         setNewExpense({ ...newExpense, description: '', value: 0 });
+        setDescriptionError(false);
     };
 
     const handleAddExtraEntry = () => {
@@ -334,13 +340,23 @@ const PaymentSheet: React.FC<Props> = ({
                                             />
                                         </div>
                                         <div className="md:col-span-6">
-                                            <label className="block text-xs font-medium text-gray-500 mb-1">Descrição</label>
+                                            <div className="flex justify-between items-center mb-1">
+                                                <label className="block text-xs font-medium text-gray-500">Descrição</label>
+                                                {descriptionError && (
+                                                    <span className="text-xs text-red-500 animate-fade-in font-medium">
+                                                        Por favor, adicione uma descrição
+                                                    </span>
+                                                )}
+                                            </div>
                                             <input 
                                                 type="text" 
                                                 placeholder="Descrição da despesa"
                                                 value={newExpense.description}
-                                                onChange={(e) => setNewExpense({ ...newExpense, description: e.target.value })}
-                                                className="w-full p-2 border rounded"
+                                                onChange={(e) => {
+                                                    setNewExpense({ ...newExpense, description: e.target.value });
+                                                    if (descriptionError) setDescriptionError(false);
+                                                }}
+                                                className={`w-full p-2 border rounded ${descriptionError ? 'border-red-500 focus:border-red-500 focus:ring-1 focus:ring-red-500' : ''}`}
                                             />
                                         </div>
                                         <div className="md:col-span-2">
