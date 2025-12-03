@@ -53,8 +53,9 @@ input[type=number] {
         width: 210mm !important;
         max-width: 210mm !important;
         min-height: 297mm !important;
-        margin: 0 auto !important;
-        padding: 10mm !important; /* Ensure padding matches component style */
+        margin: 0 !important;
+        padding: 10mm !important;
+        box-sizing: border-box !important;
         box-shadow: none !important;
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
