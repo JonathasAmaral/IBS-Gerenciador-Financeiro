@@ -183,7 +183,7 @@ const PaymentSheet: React.FC<Props> = ({
                     {page.isFirst && (
                         <>
                             {/* Top Section: Financial Summary & Inputs */}
-                            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 mb-8 print:bg-transparent print:border-gray-300">
+                            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 mb-8">
                                 {/* Row 1: Entries, Previous Balance, Subtotal */}
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                                     <div>
@@ -191,7 +191,7 @@ const PaymentSheet: React.FC<Props> = ({
                                         <CurrencyInput 
                                             value={data.entries}
                                             onChange={(val) => onUpdate({ entries: val })}
-                                            className="w-full p-2 bg-white border border-gray-300 rounded text-right font-mono font-medium focus:ring-2 focus:ring-blue-500 outline-none print:border-none print:p-0 print:text-right"
+                                            className="w-full p-2 bg-white border border-gray-300 rounded text-right font-mono font-medium focus:ring-2 focus:ring-blue-500 outline-none"
                                             placeholder="0,00"
                                         />
                                     </div>
@@ -200,13 +200,13 @@ const PaymentSheet: React.FC<Props> = ({
                                         <CurrencyInput 
                                             value={data.previousBalance}
                                             onChange={(val) => onUpdate({ previousBalance: val })}
-                                            className="w-full p-2 bg-white border border-gray-300 rounded text-right font-mono font-medium focus:ring-2 focus:ring-blue-500 outline-none print:border-none print:p-0 print:text-right"
+                                            className="w-full p-2 bg-white border border-gray-300 rounded text-right font-mono font-medium focus:ring-2 focus:ring-blue-500 outline-none"
                                             placeholder="0,00"
                                         />
                                     </div>
                                     <div>
                                         <label className="block text-xs font-bold text-gray-600 uppercase mb-1">Total</label>
-                                        <div className="w-full p-2 bg-gray-100 border border-gray-300 rounded text-right font-mono font-bold text-blue-700 print:bg-transparent print:border-none print:p-0">
+                                        <div className="w-full p-2 bg-gray-100 border border-gray-300 rounded text-right font-mono font-bold text-blue-700">
                                             {formatCurrency(totalAvailable)}
                                         </div>
                                     </div>
@@ -395,7 +395,7 @@ const PaymentSheet: React.FC<Props> = ({
                                     <span className="font-medium">- {formatCurrency(totalExpenses)}</span>
                                 </div>
                             </div>
-                            <div className="bg-gray-100 p-6 rounded-lg flex flex-col justify-center items-center text-center print:bg-transparent print:border print:border-gray-300">
+                            <div className="bg-gray-100 p-6 rounded-lg flex flex-col justify-center items-center text-center">
                                 <span className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-1">Valor Total em Caixa</span>
                                 <span className={`text-3xl font-bold ${data.totalAmount >= 0 ? 'text-blue-600' : 'text-red-600'}`}>
                                     {formatCurrency(data.totalAmount)}

@@ -17,7 +17,7 @@ const ExpenseTable: React.FC<ExpenseTableProps> = ({ expenses, onRemove }) => {
                         <th scope="col" className="px-4 py-2 text-gray-700 font-bold border border-gray-300">Data</th>
                         <th scope="col" className="px-4 py-2 text-gray-700 font-bold w-full border border-gray-300">Descrição</th>
                         <th scope="col" className="px-4 py-2 text-gray-700 font-bold text-right border border-gray-300">Valor</th>
-                        <th scope="col" className="px-4 py-2 text-gray-700 font-bold border border-gray-300 w-10 pdf-exclude"></th>
+                        <th scope="col" className="px-4 py-2 text-gray-700 font-bold border border-gray-300 w-10 pdf-exclude print:hidden"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,7 +26,7 @@ const ExpenseTable: React.FC<ExpenseTableProps> = ({ expenses, onRemove }) => {
                             <td className="px-4 py-2 text-gray-700 border border-gray-300">{formatDate(expense.date)}</td>
                             <td className="px-4 py-2 text-gray-800 font-medium border border-gray-300">{expense.description}</td>
                             <td className="px-4 py-2 text-gray-800 font-bold text-right border border-gray-300">{formatCurrency(expense.value)}</td>
-                            <td className="px-4 py-2 text-center border border-gray-300 pdf-exclude">
+                            <td className="px-4 py-2 text-center border border-gray-300 pdf-exclude print:hidden">
                                 <button 
                                     onClick={() => onRemove(expense.id)}
                                     className="text-red-500 hover:text-red-700 font-bold"
