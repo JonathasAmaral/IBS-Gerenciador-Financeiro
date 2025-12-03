@@ -61,7 +61,7 @@ input[type=number] {
         width: 210mm !important;
         height: 297mm !important;
         margin: 0 !important;
-        padding: 10mm !important;
+        padding: 10mm 15mm 10mm 5mm !important; /* Adjusted padding to shift content left */
         box-sizing: border-box !important;
         box-shadow: none !important;
         print-color-adjust: exact;
