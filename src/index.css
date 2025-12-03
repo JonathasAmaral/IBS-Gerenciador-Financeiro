@@ -40,7 +40,7 @@ input[type=number] {
 @media print {
     @page {
         margin: 0;
-        size: A4;
+        size: A4 portrait;
     }
 
     html, body {
@@ -52,15 +52,14 @@ input[type=number] {
     }
 
     #root {
-        width: 100%;
+        width: 210mm;
         margin: 0 !important;
         padding: 0 !important;
     }
 
     .pdf-page {
         width: 210mm !important;
-        max-width: 210mm !important;
-        min-height: 297mm !important;
+        height: 297mm !important;
         margin: 0 !important;
         padding: 10mm !important;
         box-sizing: border-box !important;
@@ -68,6 +67,7 @@ input[type=number] {
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
         break-after: page;
+        page-break-after: always;
     }
 }
 
