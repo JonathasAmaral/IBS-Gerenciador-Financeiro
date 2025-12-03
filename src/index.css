@@ -36,3 +36,24 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+@media print {
+    @page {
+        margin: 0;
+        size: auto;
+    }
+
+    body {
+        background-color: white;
+    }
+
+    .pdf-page {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding-left: 10mm !important;
+        padding-right: 10mm !important;
+        box-shadow: none !important;
+    }
+}
+
