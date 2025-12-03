@@ -40,20 +40,24 @@ input[type=number] {
 @media print {
     @page {
         margin: 0;
-        size: auto;
+        size: A4;
     }
 
     body {
         background-color: white;
+        margin: 0;
+        padding: 0;
     }
 
     .pdf-page {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding-left: 10mm !important;
-        padding-right: 10mm !important;
+        width: 210mm !important;
+        max-width: 210mm !important;
+        min-height: 297mm !important;
+        margin: 0 auto !important;
+        padding: 10mm !important; /* Ensure padding matches component style */
         box-shadow: none !important;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
     }
 }
 
